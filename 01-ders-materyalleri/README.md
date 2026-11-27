@@ -2,6 +2,8 @@
 
 Bu bölüm, sınav müfredatındaki 20 temel konuyu adım adım ilerleyebilmeniz için hazırlanmıştır.
 
+![Bilgi Güvenliğine Giriş](../../../Gorseller/001-Intro.md.jpg)
+
 # 📚 CEH v13 Ders Materyalleri ve Konu Dizini
 
 1. **[Modül 01: Etik Hackerlığa Giriş](./Moduller/01-etik-hackerliga-giris/)**
