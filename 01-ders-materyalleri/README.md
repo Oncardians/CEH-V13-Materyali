@@ -2,7 +2,7 @@
 
 Bu bölüm, sınav müfredatındaki 20 temel konuyu adım adım ilerleyebilmeniz için hazırlanmıştır.
 
-![Bilgi Güvenliğine Giriş](../../../Gorseller/001-Intro.md.jpg)
+![Bilgi Güvenliğine Giriş](../Gorseller/001-Intro.md.jpg)
 
 # 📚 CEH v13 Ders Materyalleri ve Konu Dizini
 
