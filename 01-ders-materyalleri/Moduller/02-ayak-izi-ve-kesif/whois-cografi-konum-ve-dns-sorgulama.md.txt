@@ -1,0 +1,1 @@
+# WHOIS, Coğrafi Konum ve DNS Sorgulama (WHOIS, GeoIP Location and DNS Interrogation)

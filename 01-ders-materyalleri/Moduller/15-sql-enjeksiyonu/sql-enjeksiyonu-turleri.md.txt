@@ -1,0 +1,1 @@
+# SQL Enjeksiyonu Türleri (SQL Injection Types)
