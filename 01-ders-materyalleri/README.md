@@ -26,3 +26,8 @@ Bu bölüm, sınav müfredatındaki 20 temel konuyu adım adım ilerleyebilmeniz
 
 ---
 ⬅️ [Ana Menüye Dön](../README.md)
+
+---
+## 📄 Lisans ve Kaynakça
+
+Bu ders materyalleri, [undergroundwires/CEH-in-bullet-points](https://github.com) deposundaki açık kaynaklı çalışma notlarından esinlenilerek ve **CC-BY-4.0** lisansı kapsamında Türkçeye uyarlanıp yeni görseller ve kaynaklarla zenginleştirilerek hazırlanmıştır.
