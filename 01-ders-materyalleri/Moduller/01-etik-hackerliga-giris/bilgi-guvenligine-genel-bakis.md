@@ -79,7 +79,7 @@
   1. Saldırganlar ağınızdaki bir cihaza (örneğin akıllı saat, akıllı buzdolabı veya kişisel bilgisayar) erişim sağlar.
   2. Bu cihaz üzerinden ağdaki bir sonraki cihaza, oradan da diğerlerine geçerek ilerler.
   3. Nihayetinde saldırgan tüm ağın kontrolünü ele geçirebilir.
-* 🤗 **Gerçek Hayat Senaryosu (Banka veya Kurum Hackleme Örneği):**
+*  **Gerçek Hayat Senaryosu (Banka veya Kurum Hackleme Örneği):**
   1. Kurumda en yüksek erişim yetkisine sahip kişi hedef seçilir.
   2. Saldırı vektörü (**attack vector**) olarak bu kişinin ev yönlendiricisi (router) hacklenir.
      * Kurumsal ağlarda güvenlik duvarları, IT ekipleri ve sıkı politikalar varken; ev router'ları nadiren güncellenir, zafiyetlerle doludur ve genellikle küçültülmüş bir Linux işletim sistemi çalıştırır.
@@ -110,4 +110,87 @@
   * Ele geçirilen bilgisayarı kullanarak diğer sistemlere saldırılar düzenlemek.
   * Çok sayıda makineye bulaşarak zombi bilgisayar ağları (**botnet**) oluşturmak.
 
+## CIA Üçlüsü (CIA Triad)
+
+* Diğer adıyla **Bilgi Güvenliğinin Üç Temel İlkesi** (Three Principles of Information Security) olarak bilinir.
+* Bilgi güvenliğinin kalbi (ana odağı) olarak yaygın şekilde kabul edilir.
+* Her güvenlik programının temel hedefleri ve amaçları olarak işlev görmelidir.
+* 📝 **Şunları Garanti Altına Alır:**
+  * **Gizlilik (Confidentiality):** İçeriği yetkisiz hiç kimsenin görememesi.
+  * **Bütünlük (Integrity):** İletim halindeki veya depolanan veriye hiç kimsenin müdahale edememesi / değiştirememesi.
+  * **Erişilebilirlik (Availability):** Verinin ihtiyaç duyulduğu her an erişilebilir olması.
+
+---
+
+## Bilgi Güvenliğinin Unsurları (Elements of Information Security)
+
+### 1. Gizlilik (Confidentiality)
+
+* Bilginin yalnızca erişim yetkisi olan kişiler tarafından kullanılabilir olmasını sağlar.
+* Hatalı veri işleme veya bir siber saldırı girişimi gizlilik ihlallerine yol açar.
+* 💡 **Kontroller (Controls):**
+  * Şifreleme (**Encryption**)
+  * Veri sınıflandırma (**Classification**)
+  * Erişim kontrolü (**Access control**)
+  * Uygun imha yöntemleri (**Proper disposal** – örneğin DVD'lerin, CD'lerin veya disklerin fiziksel olarak yok edilmesi)
+
+### 2. Bütünlük (Integrity)
+
+* Bilginin doğruluğunu ve eksiksizliğini garanti eder.
+* Veride yapılacak uygunsuz ve yetkisiz değişiklikleri önler.
+* 💡 **Kontroller (Controls):**
+  * Özetleme (**Hashing** – MD5, SHA-256 vb.)
+  * Erişim kontrolü (**Access control**)
+
+### 3. Erişilebilirlik (Availability)
+
+* Kaynakların ve sistemlerin, yetkili kullanıcı ihtiyaç duyduğu her an çalışır ve ulaşılabilir olmasını sağlar.
+* 💡 **Kontroller (Controls):**
+  * Yedeklilik (**Redundancy** – RAID, yük dengeleme/load balancing)
+  * Veri yedeklemeleri (**Data back-ups**)
+  * Antivirüs yazılımları (**Antivirus**)
+  * DDoS koruma mekanizmaları (**DDoS prevention**)
+
+### 4. Özgünlük / Doğrulanabilirlik (Authenticity)
+
+* Bir varlığın gerçek veya bozulmamış olma niteliğini garanti eder; şu iki durumu kapsar:
+  * Kullanıcıların, kimlik doğrulama (**authentication**) yoluyla gerçekten iddia ettikleri kişi olmaları.
+  * Sunulan bir belgenin veya bilginin bozulmamış ve kaynağının gerçek olması.
+* 💡 **Kontroller (Controls):**
+  * **Kullanıcılar için:** Biyometrik veriler (**biometrics**), akıllı kartlar (**smart cards**)
+  * **Veriler için:** Dijital sertifikalar (**digital certificates**)
+
+### 5. İnkar Edememe (Non-repudiation)
+
+* 📝 **Şunları Garanti Eder:**
+  * Bir mesajı gönderen tarafın, mesajı gönderdiğini inkar edememesi.
+  * Alıcı tarafın, mesajı aldığını inkar edememesi.
+* 💡 **Kontroller (Controls):**
+  * Dijital imzalar (**Digital signatures**)
+  * Kayıt tutma / Günlükleme (**Logging**)
+
+---
+
+## İşlevsellik, Kullanılabilirlik ve Güvenlik Üçgeni (Functionality, Usability, Security Triangle)
+
+### Bileşenleri (Components)
+
+* **İşlevsellik (Functionality):** Sistemin sunduğu özellikler ve yeteneklerdir.
+* **Kullanılabilirlik (Usability):** Sistemin grafiksel kullanıcı arayüzü (**GUI**) ve ne kadar kullanıcı dostu olduğudur.
+* **Güvenlik (Security):** Sistem süreçlerinin nasıl kullanıldığı ve kimler tarafından kullanıldığının kontrolüdür.
+
+### Birbirine Bağlılık (Interconnected)
+
+* Bu üç bileşenden birinde yapılan herhangi bir değişiklik, diğer ikisini doğrudan etkiler ve genellikle azaltır.
+* **Örnek:** Sistem güvenliği artırıldığında, daha fazla doğrulama adımı ve denetim ek yükü (**overhead**) oluştuğu için sistemin işlevselliği ve kullanılabilirliği azalır.
+* 💡 **İpucu:** İstenen güvenlik, işlevsellik ve kullanılabilirlik seviyelerine ulaşmak için her üç bileşen arasında optimum denge kurulmalıdır.
+
+---
+
+## Belge Türleri (Document Types)
+
+* **Standart (Standard):** Tutarlılığı sağlamak için uyulması **zorunlu** olan kurallardır.
+* **Temel Çizgi (Baseline):** Sistemler için gerekli olan **minimum** güvenlik seviyesini tanımlar.
+* **Kılavuz / Rehber (Guideline):** Uyulması gereken kesin bir standart bulunmadığında kullanıcıların izlemesi önerilen **esnek** eylemlerdir.
+* **Prosedür (Procedure):** Bir görevi veya hedefi gerçekleştirmek için hazırlanan **ayrıntılı adım adım** talimatlardır.
 
