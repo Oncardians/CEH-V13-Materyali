@@ -1,1 +1,126 @@
 # Bilgi Güvenliğine Genel Bakış (Information Security Overview)
+
+## Bilgi Güvenliği (Information Security)
+
+- Bilgi güvenliği, bilginin (information) ve bilgi sistemlerinin (information systems) korunması sürecidir.
+- Bilgiyi korumak amacıyla yürütülen süreçler (processes) ve faaliyetler (activities) bütününü tanımlar.
+- Temel amacı, yetkisiz kullanıcıların (unauthorized users) bilgileri veya hizmetleri (services) çalmasını ve kötüye kullanmasını önlemektir.
+  - Hassas bilgilerin (sensitive information) yanlış kişilerin eline geçmesi durumunda; finansal kayıplar (finances), marka itibarının zedelenmesi (brand reputations) ve müşteri kaybı (customers) gibi çok büyük zararlar ortaya çıkabilir.
+
+## Temel Kavramlar (Essential Terms)
+
+### Hack Değeri (Hack Value)
+
+- Bilgisayar korsanlarının (hackers) bir hedefin saldırıya değip değmeyeceğine veya ne kadar ilgi çekici olduğuna dair yaptığı değerlendirmedir.
+- Yüksek hack değerine (high hack value) sahip durumlara şu örnekler verilebilir:
+  - Maddi kazanç sağlayabileceği için insanların kredi kartı bilgilerine erişmek.
+  - Zor bir işin yapılabileceğini kanıtlamak amacıyla yalnızca insanların isimlerine erişmek.
+
+### Güvenlik Açığı (Vulnerability)
+
+- Sistemi tehlikeye atabilen (compromise) ve olası bir saldırı için kullanılabilen zayıflıklardır.
+- Örneğin:
+  - **Bir politika eksikliği (policy):** Personelin iş bilgisayarlarına USB bellek (USB drives) takıp takamayacağını düzenleyen kuralların bulunmaması buna örnektir.
+  - **Tasarım veya uygulama hataları (design/implementation errors):** Linux, macOS ve Windows işletim sistemlerinin, kendisini klavye gibi tanıtan bir USB belleğin bilgisayarda yüksek düzeyde erişim elde etmesine izin veren bir güvenlik açığına karşı savunmasız olması bu duruma örnektir.
+
+### İstismar (Exploit)
+
+- Güvenlik açıklarından (vulnerabilities) faydalanarak sisteme sızma (breach) işlemidir.
+- Aynı zamanda, tespit edilen güvenlik açıklarından yararlanmayı sağlayan yazılımları da ifade eder.
+- Örneğin, kötü amaçlı bir USB belleğin (malicious USB) bilgisayara bağlanması bir istismar eylemidir.
+
+### Zararlı Yük (Payload)
+
+- Kötü amaçlı yazılımın (malware) veya istismar kodunun (exploit code) asıl işi yapan parçasıdır.
+- Şu amaçlarla kullanılır:
+  - Kurbanın makinesinde arka kapılar (backdoors) oluşturmak.
+  - Dosyalara zarar vermek veya onları silmek.
+  - Veri aktarımı yapmak veya verileri ele geçirmek (committing data).
+  - Bir bilgisayarın kontrolünü ele geçirmek (hijacking).
+- Örneğin, kötü amaçlı bir USB belleğin sisteme yüklediği bir tuş kaydedici (keylogger) veya Uzaktan Yönetim Aracı (RAT - Remote Administration Tool) birer zararlı yüktür.
+
+### Sıfırıncı Gün Saldırısı (Zero-Day Attack)
+
+- ***Zero-day attack***, ***0-day attack*** veya ***0 day attack*** olarak da bilinir.
+- Daha önce bilinmeyen güvenlik açıklarının (previously unknown vulnerabilities), henüz bir güvenlik yaması (patch) yayınlanmadan önce istismar edilmesidir.
+- **Sıfırıncı Gün Açığı (Zero-Day Vulnerability):**
+  - Yazılımda bulunan ve şu iki durumdan birine uyan güvenlik boşluğudur:
+    - Sorunu çözmekle yükümlü olan tarafça (örneğin yazılım üreticisi - vendor tarafından) henüz bilinmemektedir.
+    - Bilinmektedir ancak henüz bir yaması (patch) geliştirilmemiştir.
+  - Hedef odaklı saldırılar (targeted attacks) genellikle sıfırıncı gün açıklarını içerir.
+  - ❗ Bir güvenlik açığı kamuoyuna açıklandıktan (disclosed) ve yamalandıktan (patched) sonra artık "sıfırıncı gün açığı" olmaktan çıkar.
+- **Sıfırıncı Gün İstismarı (Zero-Day Exploit):**
+  - Sıfırıncı gün açıklarından faydalanma eylemidir.
+  - Genellikle kötü amaçlı yazılımlar (malware) kullanılarak gerçekleştirilir.
+- **Süreç Akışı (Flow):**
+  1. Saldırgan (attacker) güvenlik açığını keşfeder.
+  2. Saldırgan bu açığı istismar eder (exploits).
+  3. Saldırı gerçekleşir (bu aşamaya "sıfırıncı gün" - day zero denir).
+  4. Yazılım üreticisi (vendor) güvenlik açığını öğrenir.
+  5. Üretici tarafından bir yama (patch) oluşturulur.
+     - Ancak yazılım eskiyse (outdated) veya desteği sona ermişse (no support) üretici bazen yama yayınlamayabilir.
+  6. Oluşturulan yama sistemlere uygulanır.
+     - ❗ Bazen bu yamalar uygulanmaz!
+       - Örneğin internet servis sağlayıcıları (ISPs - Internet Service Providers) kurulumdan sonra genellikle cihazları yeniden yapılandırmadığı için ev yönlendiricilerinde (home routers) yıllardır bilinen güvenlik açıkları kalabilmektedir.
+     - 💡 Yama oluşturulduğu an ile sistemlere uygulandığı an arasındaki zaman dilimi, kötü niyetli bilgisayar korsanları (malicious hackers) tarafından en üst düzeyde kullanılır.
+       - Çoğu zaman şirketlerin tepki vermekte yavaş kalması büyük zararlara yol açar.
+- **Güvenlik Açığı Penceresi (Window of Vulnerability - WOV):**
+  - Bir güvenlik açığının keşfedildiği andan, savunmasız sistemlerin çoğunun yamalandığı ana kadar geçen süredir.
+  - Genellikle gün cinsinden ölçülür (örneğin 28 gün).
+- **Örnek:** **Spectre** ve **Meltdown**
+  - AMD ve Intel işlemcilerinde (CPUs) bulunan güvenlik açıklarıdır.
+  - İlgili sistemde yetki yükseltmek (escalate privileges) amacıyla istismar edilebilirler.
+  - Bu açıklar hâlâ varlığını sürdürmektedir ancak yamalandıkları için artık sıfırıncı gün açığı sayılmazlar.
+  - Tüm bulut sağlayıcılarını (cloud providers) etkileyen bu açıklar için Intel tarafından sağlanan donanım yazılımı (firmware) güncellemelerinin çalıştırılması gerekmiş ve bu durum gecikmelere neden olmuştur.
+
+### Zincirleme Saldırı (Daisy Chaining)
+
+- Bilgisayar korsanlarının bir ağa veya cihaza erişim sağladıktan sonra, bu erişimi basamak olarak kullanarak diğer ağlara ve cihazlara sızdığı saldırı türüdür.
+- **Adımlar (Steps):**
+  1. Saldırganlar sisteminiz veya ağınız içindeki bir cihaza erişim sağlar.
+     - Örneğin; akıllı saat (smartwatch), akıllı buzdolabı (refrigerator) veya kişisel bilgisayar (PC).
+  2. Ağınızdaki bir sonraki cihaza, ardından diğerine geçerek ilerlerler.
+     - Bu sürecin sonunda saldırgan tüm ağın kontrolünü ele geçirebilir (owns the network).
+- 🤗 **Bankalara veya benzer kurumlara yönelik saldırı örneği:**
+  1. İlk olarak kurumda en yüksek erişim yetkisine sahip kişi hedef alınır.
+  2. Saldırı vektörü (attack vector) olarak bu kişinin ev yönlendiricisi (home router) hacklenir.
+     - Çünkü kurumsal ağa (corporate network) kıyasla en zayıf halka burasıdır.
+       - **Kurumsal ağ (Corporate network):** Güvenlik duvarları (firewalls), BT personeli (IT staff) ve katı güvenlik politikaları (policies) bulunur.
+       - **Ev yönlendiricisi (Home router):** Nadiren güncellenir ve güvenlik açıklarıyla (vulnerabilities) doludur.
+       - Genellikle küçültülmüş bir Linux işletim sistemi (down-sized Linux OS) çalıştırırlar.
+     - **Saldırı vektörü (Attack vector):** Bir bilgisayar korsanının hedef sisteme erişmek veya sızmak (penetrate) için kullandığı yöntem veya yoldur.
+  3. Yönlendiriciye bağlı olan cihazlar taranır (scan).
+     - İletişim içeriği şifreli (encrypted) olsa bile, kullanılan portlar (ports), URL'ler ve adresler her zaman görülebilir.
+     - Örneğin; hedefteki kişinin bilgisayarı, eşinin bilgisayarı, akıllı TV veya buzdolabı, kendi cep telefonu ve eşinin cep telefonu ağda tespit edilir.
+  4. Farklı saldırı vektörü seçenekleriyle saldırı düzenlenir:
+     - DNS ayarları değiştirilerek saldırgan kendisini DNS sunucusu olarak atayabilir.
+     - Hedef kişinin bilgisayarı DMZ (Demilitarized Zone - silahsızlandırılmış bölge) içerisine alınarak dış dünyadan erişime açık hale getirilebilir.
+     - Cihazların işletim sistemlerine yönelik oltalama (phishing) veya istismar (exploits) saldırıları uygulanabilir.
+     - Sistemlerden birine erişim sağlanır:
+       - Örneğin, birçok güvenlik açığı barındıran bir Android telefon ele geçirilebilir.
+         - Çünkü bu cihazlar bir süre sonra güncelleme almazlar.
+         - Ayrıca cihazlar tasarım sınırlarını aştığında (örneğin dışarısı çok sıcakken çalıştırıldığında) meydana gelen donanım hataları (hardware flaws), **Bitsquatting** gibi istismar edilebilir yazılım saldırılarına yol açabilir.
+  5. Son aşamada kritik erişimler elde edilir:
+     - Banka hesapları ve kredi kartı bilgileri gibi hassas verilere ulaşılır.
+     - Bir cihaza virüs bulaştırıldıktan sonra, örneğin söz konusu cep telefonu banka ağında da kullanılıyorsa, oradan banka ağındaki diğer cihazlara sıçrama yapılır.
+
+### İfşa Etme (Doxing)
+
+- Bir kişinin kimliğini belirlemeye yarayan kişisel bilgilerini (PII - Personally Identifiable Information) kötü niyetli amaçlarla bulup internette yayınlama eylemidir.
+- Örneğin, bir bireyin adı, e-posta adresi veya bir kurumun hassas verileri (sensitive data) paylaşılabilir.
+- Gizli devlet dosyalarının (confidential government files) kamuoyuna sızdırılması da buna bir örnektir.
+- **Adımlar (Steps):**
+  1. Bir kişi veya kurum hakkında özel ve değerli bilgiler toplanır.
+     - Örneğin fotoğraflar, sosyal güvenlik numaraları (SSN - Social Security Number / TC kimlik no vb.), sosyal medya hesapları ve adres bilgileri elde edilir.
+     - Sosyal medya üzerinden daha fazla bilgi öğrenilerek hedefin detaylı bir profili çıkarılır (build a profile).
+  2. Toplanan bilgiler farklı kötü amaçlar doğrultusunda kullanılır.
+     - Örneğin kimlik hırsızlığı (identity theft) yapılır, finansal bilgiler çalınarak kullanılır veya hedef kişilere istemedikleri şeyleri yaptırmak için şantaj/zorlama (coercing) uygulanır.
+
+### Bot
+
+- "Robot" kelimesinin kısaltmasıdır.
+- Önceden tanımlanmış görevleri (predefined tasks) yerine getirmek üzere uzaktan kontrol edilebilen bir yazılımdır.
+- Bilgisayar korsanları tarafından, virüs bulaşmış makineleri (infected machines) kötü amaçlarla yönetmek için kullanılır.
+- **Kullanım alanları (Use-case):**
+  - Ele geçirilen bir bilgisayarı kontrol ederek diğer bilgisayarlara saldırılar düzenlemek.
+  - Daha fazla makineye virüs bulaştırarak bir bot ağı (botnet) oluşturmak.
