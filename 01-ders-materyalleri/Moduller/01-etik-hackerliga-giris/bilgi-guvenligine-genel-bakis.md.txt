@@ -124,3 +124,4 @@
 - **Kullanım alanları (Use-case):**
   - Ele geçirilen bir bilgisayarı kontrol ederek diğer bilgisayarlara saldırılar düzenlemek.
   - Daha fazla makineye virüs bulaştırarak bir bot ağı (botnet) oluşturmak.
+
